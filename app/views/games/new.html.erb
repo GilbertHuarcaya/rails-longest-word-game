@@ -1,0 +1,15 @@
+<h2>Meet our team</h2>
+<ol>
+  <% @letters.each do |letter| %>
+    <li><%= letter.capitalize %></li>
+  <% end %>
+</ol>
+<form action="/score" accept-charset="UTF-8" method="post">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<h3>What is the longst word you can find?:</h3>
+<div>
+  <input id="input-text" type="text" name="word" value="<%= params[:question] %>">
+  <input id="submit-btn" type="submit" value="Send!">
+  <input id="letters" name="letters" type="hidden" value=<% @letters.each do |letter| %><%= letter %><% end %> />
+  </div>
+</form>

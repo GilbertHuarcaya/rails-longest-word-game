@@ -1,0 +1,15 @@
+<div class="answer">
+<h1>Stupid Coaching</h1>
+<div class="card">
+<% if @validate && !@englishword %>
+<p><%= @word %> can be formed with <%= @letters.join(',') but isnt an english word%></p>
+<% elsif @validate && @englishword %>
+<p><%= @word %> is an english word </p>
+<% else %>
+<p><%= @word %> is not an english word or cant be luilt with <%= @letters.join(",") %> </p>
+<% end %>
+</div>
+
+</div>
+<%= link_to "Restart", new_path %>
+</div>
